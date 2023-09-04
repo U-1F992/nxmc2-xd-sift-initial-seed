@@ -53,12 +53,12 @@ powershell -Command "Expand-Archive -Path PokemonXDRNGLibrary.1.0.0.zip -Destina
 powershell -Command "Expand-Archive -Path PokemonXDRNGLibrary.XDDB.1.0.0.zip -DestinationPath PokemonXDRNGLibrary.XDDB.1.0.0"
 CD ..
 
-CD xd-sift-initial-seed
-IF EXIST PokemonPRNG.dll DEL PokemonPRNG.dll
+CD nxmc2-xd-sift-initial-seed
+mklink NxInterface.dll "C:\Program Files (x86)\NX Macro Controller\NxInterface.dll"
+mklink OpenCvSharp.dll "C:\Program Files (x86)\NX Macro Controller\OpenCvSharp.dll"
+mklink OpenCvSharp.Extensions.dll "C:\Program Files (x86)\NX Macro Controller\OpenCvSharp.Extensions.dll"
 MKLINK PokemonPRNG.dll ..\.nuget\PokemonPRNG.3.8.0\lib\netstandard2.0\PokemonPRNG.dll
-IF EXIST PokemonXDRNGLibrary.dll DEL PokemonXDRNGLibrary.dll
 MKLINK PokemonXDRNGLibrary.dll ..\.nuget\PokemonXDRNGLibrary.1.0.0\lib\netstandard2.0\PokemonXDRNGLibrary.dll
-IF EXIST PokemonXDRNGLibrary.XDDB.dll DEL PokemonXDRNGLibrary.XDDB.dll
 MKLINK PokemonXDRNGLibrary.XDDB.dll ..\.nuget\PokemonXDRNGLibrary.XDDB.1.0.0\lib\netstandard2.0\PokemonXDRNGLibrary.XDDB.dll
 CD ..
 
